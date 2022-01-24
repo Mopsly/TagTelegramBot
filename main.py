@@ -11,6 +11,14 @@ from database import engine
 import models
 import os
 
+WEBHOOK_HOST = 'https://your.domain'
+WEBHOOK_PATH = '/path/to/api'
+WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
+
+# webserver settings
+WEBAPP_HOST = 'localhost'  # or ip
+WEBAPP_PORT = 3001
+
 API_TOKEN = os.environ.get('BOT_TOKEN')
 print(API_TOKEN)
 # Configure logging
@@ -53,6 +61,8 @@ async def set_aliases(message: types.Message):
 
 @dp.message_handler(state=AliasDlg.alias)
 async def receive_alias_list(message: types.Message, state: FSMContext):
+    if message.is_command():
+        return
     repository.update_user(message.from_user.id,
                            message.from_user.username,
                            False, database.session)
