@@ -11,15 +11,8 @@ from database import engine
 import models
 import os
 
-WEBHOOK_HOST = 'https://your.domain'
-WEBHOOK_PATH = '/path/to/api'
-WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 
-# webserver settings
-WEBAPP_HOST = 'localhost'  # or ip
-WEBAPP_PORT = 3001
-
-API_TOKEN = os.environ.get('BOT_TOKEN')
+API_TOKEN = os.environ.get('1692622341:AAFmylHjOSKsSsjzcw8vWmQD_48l2sVya7Q')
 print(API_TOKEN)
 # Configure logging
 logging.basicConfig(level=logging.INFO)
