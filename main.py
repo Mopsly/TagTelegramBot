@@ -12,7 +12,7 @@ import models
 import os
 
 
-API_TOKEN = os.environ.get('1692622341:AAFmylHjOSKsSsjzcw8vWmQD_48l2sVya7Q')
+API_TOKEN = "1692622341:AAFmylHjOSKsSsjzcw8vWmQD_48l2sVya7Q"
 print(API_TOKEN)
 # Configure logging
 logging.basicConfig(level=logging.INFO)
